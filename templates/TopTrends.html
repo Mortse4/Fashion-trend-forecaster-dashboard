@@ -1,0 +1,77 @@
+{%extends "base.html" %}
+
+{% block content %}
+    <!-- opening banner -->
+<div class="toptrendLanding">
+    <img src="{{url_for('static', filename = 'images/toptrendfirstimage.jpg') }}" alt="landingImage">
+    <h1>TOP TRENDS</h1>
+</div>
+
+<div class="cluster-container">
+    <div class="cluster-graph-caption">
+        <p>Using the BIRCH clustering algorithms, we took all 90,000 runway looks and separated them into roughly 3000 clusters. 
+            What is presented below is the top 10 clusters throughout the years, projected into a 2-dimensional PCA component. 
+            These clusters group loosely similar looks across 1995–2024, which could be seen as evolving trends. 
+            <span class="note">(Note: This visualization currently does not reflect trend rises, peaks, declines, or resurgences.)</span>
+
+        </p>
+    </div>
+
+    <div class="interactive-cluster">
+        {{ cluster_graph|safe }}
+    </div>
+</div>
+
+
+<div class="trend-gallery">
+  {% for trend in clusters %}
+    <div class="trend-section">
+
+    <!-- Title for each trend-->
+      <div class="trend-title">
+        <h3>{{ trend.title }}</h3>
+      </div>
+
+      <!-- Trend images -->
+      <div class = "trend-image-des">
+        <div class="trend-images">
+          {% for image in trend.images %}
+            <div class="image-card">
+              <img src="{{ url_for('static', filename=image) }}" loading="lazy" alt="Trend {{ trend.cluster_id }}">
+            </div>
+          {% endfor %}
+        </div>
+        
+        <!--  Description for each trend -->
+        <div class="trend-description">
+          <p>{{ trend.description }}</p>
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Animate once
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.trend-section').forEach(entry => {
+      observer.observe(entry);
+    });
+  });
+</script>
+{% endblock %}
+
+{% endblock %}

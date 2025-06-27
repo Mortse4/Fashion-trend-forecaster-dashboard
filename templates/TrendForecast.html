@@ -1,0 +1,114 @@
+{%extends "base.html" %}
+
+{% block content %}
+
+
+<!--opening banner -->
+<div class="tflanding">
+    <img src="{{ url_for('static', filename='images/tflandingpage.png') }}" alt="tfbanner" class="background-img">
+    <div class="overlay">
+        <h1 class="trend-forecast-title">TREND FORECASTER</h1>
+    </div>
+</div>
+
+
+<p class="trend-forecast-opening-caption"> Our trend forecasting module uses a hybrid AI approach to predict which fashion 
+    aesthetics are likely to rise in popularity. By clustering over 60,000 runway looks into visual categories using BIRCH and PCA, 
+    we track how trends emerge, grow, and fade over time. Then, through a combination of LSTM and Transformer models, we forecast 
+    the future trajectory of each trend based on historical frequency and momentum. This allows us to model not just what is trending now, 
+    but what is poised to make a return—or a debut—on runways in seasons to come.</p>
+
+<!--the graph section-->
+<div class="forecast-container">
+    <div class="forecast-graph">
+        <h2> Opulent Fur </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster10597.png') }}" alt="cluster10597">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Neo-Noir Tailoring </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster13641.png') }}" alt="cluster13641">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Relaxed Suits</h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster13893.png') }}" alt="cluster13893">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Masculine Power Suits </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster14931.png') }}" alt="cluster14931">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> A-line Colourful Gowns</h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster17705.png') }}" alt="cluster17705">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Avant-Garde Romantic Ballgowns</h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster17719.png') }}" alt="cluster17719">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Feminine High Fashion </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster17806.png') }}" alt="cluster17806">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Tulle Dresses </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster19243.png') }}" alt="cluster19243">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Off the Shoulder Maxi Dresses </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster19418.png') }}" alt="cluster19418">
+    </div>
+
+    <div class="forecast-graph">
+        <h2> Sleek Black Dress </h2>
+        <img src="{{url_for('static', filename = 'forecast/cluster31040.png') }}" alt="cluster31040">
+    </div>
+</div>
+
+<!--javascript used to handle expanding and minimising each graph-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll('.forecast-graph');
+    
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('expanded');
+    
+                const overlay = document.createElement('div');
+                overlay.classList.add('modal-overlay');
+    
+                const closeBtn = document.createElement('div');
+                closeBtn.innerHTML = '&times;';
+                closeBtn.classList.add('close-btn');
+    
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(clone);
+                    document.body.removeChild(overlay);
+                });
+    
+                overlay.addEventListener('click', () => {
+                    document.body.removeChild(clone);
+                    document.body.removeChild(overlay);
+                });
+    
+                clone.appendChild(closeBtn);
+                document.body.appendChild(overlay);
+                document.body.appendChild(clone);
+            });
+        });
+    });
+    </script>
+    
+
+
+{% endblock %}
+
+
+

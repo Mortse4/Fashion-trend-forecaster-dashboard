@@ -1,0 +1,703 @@
+/* General body styles */
+body {
+    font-family: Arial, Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF6F7;
+}
+
+/* Navbar styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-family: Lato, "sans-serif";
+    scroll-behavior: smooth;
+}
+
+body {
+  margin-top: 0;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex; /* Flexbox for horizontal layout */
+    position: sticky;
+    top:0;
+    justify-content: space-between; /* Align "Home" on the left, the rest on the right */
+    background-color: #FAF6F7;
+    z-index: 1000;
+    font-family: Arial;
+    font-size: 24px;
+    height: 90px;
+}
+
+/* List items in the navbar */
+.navbar ul {
+    list-style-type: none; /* Remove list bullets */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align list items horizontally */
+}
+
+.navbar ul.right-align {
+    margin-left: auto; /* Push the items to the right */
+}
+
+/* List item style */
+.navbar li {
+    margin: 0; /* Remove additional margins */
+
+}
+
+/* Link style */
+.navLink {
+    text-decoration: none;
+    color: #1c2023;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 24px 35px;
+    width: 100%;
+    height: 100%;
+    display:flex; 
+    align-items: center;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Active link style */
+.navLink--active {
+
+    color: #1C2023; 
+    font-size: 24px;
+}
+/* Hover effect */
+.navLink:hover {
+    background-color: #ddd; 
+    color: #000; 
+}
+
+
+/*home - slideshow and text section*/
+
+.Opening_section {
+    display: flex;
+    padding: 0px 20px 20px 0px;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 92.2vh;
+    gap: 130px; 
+}
+/* Slideshow container */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Control max size */
+    aspect-ratio: 2/3; /* Maintain proportion instead of fixed height */
+    overflow: hidden;
+}
+
+
+/* Style for each slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+/* Keyframes for the fade effect */
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }  /* Show image */
+    30% { opacity: 1; }  /* Hold the image for a while */
+    40% { opacity: 0; }  /* Start fading out */
+    100% { opacity: 0; }
+}
+
+/* Apply animation to each slide */
+.slide:nth-child(1) { animation: fade 21s infinite; }
+.slide:nth-child(2) { animation: fade 21s infinite 7s; }
+.slide:nth-child(3) { animation: fade 21s infinite 14s; }
+.slide:nth-child(4) { animation: fade 21s infinite 21s; }
+.slide:nth-child(5) { animation: fade 21s infinite 28s; }
+.slide:nth-child(6) { animation: fade 21s infinite 35s; }
+
+/* Make sure images fill the space */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills container */
+}
+
+/* Text section beside slideshow */
+.text_to_slideshow {
+    width: 53%;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    align-items: center;
+    color:#1C2023;
+    border-left: 6px solid #7D0562;
+    border-radius: 12px;
+    line-height: 1.75rem;
+    font-family: Arial, Helvetica, sans-serif, serif;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.text_to_slideshow h1{
+    top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color:#1C2023;
+}
+
+/*This is for the button section and extra info*/
+.link-section {
+    border-top: 1.5px solid #7D0562;    
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(228,224,221,255);
+    margin-top: 78px;
+}
+
+.link-section h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1C2023;
+    
+}
+
+.link-section p{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    max-width: 550px;
+}
+
+.link-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.H-button {
+    white-space: nonwrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    width:600px;
+    color: #1C2023;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    border: 2px solid;
+    border-color: #1C2023;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight:bold;
+    transition: background-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: end
+}
+.H-button:hover {
+    background-color: #7D0562;
+    color: rgba(228,224,221,255);
+}
+.H-button .arrow {
+    right: 100%;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+
+}
+
+.H-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+@media (max-width:768px){
+  .text_to_slideshow {
+    width: 90%;
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .text_to_slideshow h1 {
+    font-size: 1.5rem;
+  }
+
+    .link-row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .H-button{
+        width: 100%;
+        text-align: center;
+        padding-right: 10px;
+    }
+}
+@media (max-width: 1024px) {
+  .text_to_slideshow {
+    width: 70%;
+    padding: 25px;
+    font-size: 1rem;
+  }
+
+  .text_to_slideshow h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text_to_slideshow {
+    width: 100%;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .text_to_slideshow h1 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* ABOUT US*/
+
+.about-section {
+    border-top: 1.5px solid #7D0562;    
+    color: #1C2023;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    text-align: left;
+    margin-left: 25px;
+    font-size: 2rem;
+    font-family: Arial;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #7D0562;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #1C2023 ;
+    max-width: 1400px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 40px;
+}
+
+/*about section and logos*/
+.brand-logos {
+    border-top: 1.5px solid #7D0562;
+    overflow: hidden;
+    width: 100%;
+    height: 20vh;
+    padding: 1rem 0;
+    background-color: #fdfdfd;
+    position: relative;
+    bottom: 0;
+}
+
+.brand-slider {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 20s linear infinite;
+}
+
+.brand-slider img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+/* TOP TRENDS*/
+.toptrendLanding{
+    position:relative;
+    width: 100%;
+    background-color: rgba(228,224,221,255);
+    display: flex;
+
+}
+
+.toptrendLanding img{
+    object-fit:contain;
+    max-height: 90vh;
+    width: auto  
+}
+
+.toptrendLanding h1{
+    font-family: Arial;
+    font-size: 32px;
+    position: absolute;
+    top: 42%;
+    bottom: 58%;
+    left: 10px;
+}
+
+
+.interactive-cluster{
+    display: flex;
+    place-self: center;
+    bottom: 40px;
+}
+.cluster-graph-caption {
+    font-family: 'Arial', Helvetica, sans-serif;
+
+    padding: 25px;
+    border-radius: 5px;
+    margin: 25px auto;
+
+    text-align: left; /* Align text left for a more standard feel */
+}
+.cluster-graph-caption p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #1C2023 ;
+    max-width: 1400px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 20px;
+}
+.cluster-graph-caption .note {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+.trend-gallery {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  .trend-section {
+    padding: 20px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    width: 100%;
+  }
+  
+  .trend-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .trend-title h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #1C2023;
+    /*margin-left: 40px;*/
+    margin-bottom: 60px;
+    border-bottom: 2px solid #7D0562;
+    display: inline-block;
+    padding-bottom: 5px;
+
+  }
+  
+  /* Flex container for images and description side-by-side */
+  .trend-image-des {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 20px;
+    flex-wrap: wrap; /* Allows responsive wrapping if screen is narrow */
+  }
+  
+  .trend-images {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .trend-images img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .trend-description {
+    max-width: 800px;
+    font-size: 1rem;
+    color: #1C2023;
+    line-height: 1.5;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+
+/*forecaster page*/
+
+.tflanding {
+    position: relative;
+    width: 100%;
+    height: 120vh; 
+    overflow: hidden;
+}
+
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.trend-forecast-title {
+    font-family: Georgia, Arial;
+    color: #e3dcd5;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    margin: 0;
+}
+
+.trend-forecast-opening-caption{
+    max-width: 900px;
+    margin: 60px auto 40px auto;
+    padding: 30px 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-left: 6px solid #bfa58a;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #1C2023;
+    font-family: arial,'Georgia', serif;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+}
+.trend-forecast-opening-caption:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/*actual forecasting images presented here*/
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; 
+    padding: 2rem;
+}
+
+.forecast-graph {
+    border: 1.5px solid #bfa58a;   
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+
+/*.forecast-graph h2{
+    font-size: 22px;
+    font:;
+}*/
+
+.forecast-graph img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.forecast-graph:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Fullscreen modal style */
+.expanded {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: white;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* close button */
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*for smaller screens*/
+
+@media (max-width: 768px) {
+    .Opening_section {
+        flex-direction: column; /* Stack slideshow and text vertically */
+        height: auto;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .slideshow {
+        width: 100%;       /* Full width on mobile */
+        height:900px;     /* Adjust height for smaller screens */
+    }
+
+    .text_to_slideshow {
+        width: 100%;       /* Full width on mobile */
+        margin-left: 0;
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .text_to_slideshow h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.3rem;
+        color:#1C2023;
+    }
+
+    .text_to_slideshow p {
+        font-size: 1rem;
+        color: #1C2023;
+    }
+
+    .slide img {
+        height: 100%;
+    }
+    
+}
+
+/*EXTRA RESOPNSIVE CHECKS*/
+
+/* === Responsive Improvements === */
+@media (max-width: 1024px) {
+  .about-section p {
+    padding: 40px 30px;
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+    margin-left: 20px;
+  }
+
+  .brand-slider img {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section p {
+    padding: 30px 20px;
+    font-size: 0.95rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+    margin-left: 15px;
+  }
+
+  .brand-slider {
+    gap: 2rem;
+  }
+
+  .brand-slider img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section p {
+    padding: 20px 15px;
+    font-size: 0.9rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+
+  .brand-slider img {
+    height: 60px;
+  }
+
+  .brand-logos {
+    height: auto;
+  }
+}

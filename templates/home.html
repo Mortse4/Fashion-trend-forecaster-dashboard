@@ -1,0 +1,94 @@
+{%extends "base.html" %}
+
+{% block content %}
+<body>
+    <!-- Main Content -->
+    <section class="Opening_section">
+        <div class="slideshow">
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage1.webp') }}" alt="image1">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage2.webp') }}" alt="image2">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage3.webp') }}" alt="image3">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage4.webp') }}" alt="image4">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage5.webp') }}" alt="image5">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/slideshowImage6.webp') }}" alt="image6">
+            </div>
+        </div>
+
+        <div class="text_to_slideshow">
+            <h1>Fashion Trends Are Endless</h1>
+            <p>Fashion forecasting is the practice of predicting upcoming styles, silhouettes, colors, and consumer preferences. Its roots date back to the early 20th century when fashion houses began documenting collections and anticipating public tastes. Over time, this evolved into a global industry involving trend agencies, designers, and data analysts. With the rise of technology, forecasting has shifted from intuition and market observation to more data-driven approaches, using historical fashion cycles, social media trends, and now, machine learning and visual clustering. Today, forecasting blends creativity with computation to anticipate the next wave of style innovation.</p>
+        </div>
+
+    </section>
+    <section id="quick-link-section" class="link-section">
+
+        <div class="link-block">
+            <h2>Stay Ahead of the Curve</h2>
+            <div class="link-row">
+                <p>Easily plan future collections using our forecast platform which gives you the trajectory of future trends, popular fabrics and textures.</p>
+                <a href="{{ url_for('TrendForecast') }}" class="H-button">View Predicted Trends <span class="arrow">></span></a>
+            </div>
+        </div>
+
+        <div class="link-block">
+            <h2>Discover Circulating Trends in High Fashion</h2>
+            <div class="link-row">
+                <p>See what luxury fashion houses are bringing to the runway, both today and through the years.</p>
+                <a href="{{ url_for('TopTrends') }}" class="H-button">Trends Are Here <span class="arrow">></span></a>
+            </div>
+        </div>
+
+        <div class="link-block">
+            <h2>Even Top Designers Need Inspiration</h2>
+            <div class="link-row">
+                <p>Find out who are the trend setters and the trend followers within the High Fashion.</p>
+                <!--<a href="{{ url_for('DesignerInfluence') }}" class="H-button">Click Here To Find Out More <span class="arrow">></span></a>-->
+            </div>
+        </div>
+
+    </section>
+
+
+  <!-- About Section (at the bottom) -->
+    <section class="about-section" id="about">
+        <div class="aboutus">
+            <h2>About Us </h2>
+            <p>Welcome to our fashion trend forecasting dashboard. We are a multidisciplinary team of designers, data scientists, and researchers passionate about the intersection of fashion and technology. 
+                Our mission is to decode the evolution of style by using artificial intelligence to analyze decades of runway collections. With a focus on transparency and innovation, we’ve developed tools 
+                that not only identify emerging fashion trends but also explore designer influence, cyclical patterns, and visual storytelling. 
+                By combining computational power with an eye for design, we aim to offer insights that empower creatives, researchers, and industry professionals alike. 
+                Below, you'll see the logos of the top fashion brands we track and forecast.</p>
+        </div>
+        <div class="brand-logos">
+            <div class="brand-slider">
+                <img src="{{ url_for('static', filename='images/chanelLogo.png') }}" alt="Chanel">
+                <img src="{{ url_for('static', filename='images/fendiLogo.png') }}" alt="Fendi">
+                <img src="{{ url_for('static', filename='images/gucciLogo.png') }}" alt="Gucci">
+                <img src="{{ url_for('static', filename='images/valentinoLogo.png') }}" alt="Valentino">
+                <img src="{{ url_for('static', filename='images/McQueenLogo.png') }}" alt="McQueen">
+                <img src="{{ url_for('static', filename='images/versaceLogo.png') }}" alt="Versace">
+
+                <img src="{{ url_for('static', filename='images/chanelLogo.png') }}" alt="Chanel">
+                <img src="{{ url_for('static', filename='images/fendiLogo.png') }}" alt="Fendi">
+                <img src="{{ url_for('static', filename='images/gucciLogo.png') }}" alt="Gucci">
+                <img src="{{ url_for('static', filename='images/valentinoLogo.png') }}" alt="Valentino">
+                <img src="{{ url_for('static', filename='images/McQueenLogo.png') }}" alt="McQueen">
+                <img src="{{ url_for('static', filename='images/versaceLogo.png') }}" alt="Versace">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+{% endblock %}
