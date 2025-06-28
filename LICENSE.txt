@@ -1,0 +1,24 @@
+
+---
+
+### ✅ `LICENSE.txt` (Custom License)
+
+```text
+Creative Use License (v1.0)
+
+Copyright (c) [2025] [Moriah Tsekiri]
+
+Permission is hereby granted to any individual to use this project and its contents for personal, educational, or non-commercial *private* purposes only.
+
+The following are NOT permitted without explicit written permission from the copyright holder:
+- Modification and redistribution of the source code
+- Use in commercial products or services
+- Public publication of derivative works or hosting modified versions of this project
+
+Attribution:
+- Any use of concepts, code, or visuals derived from this repository must credit the original author.
+- Inspired works must link to this repository.
+
+This software is provided "as is", without warranty of any kind.
+
+For commercial or public use cases, please contact: [moriahtsekiri02@gmail.com]
