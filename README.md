@@ -16,7 +16,6 @@ This project is an interactive dashboard designed to analyze and forecast fashio
 
 - **Trend Clustering**: Uses BIRCH and PCA to identify visual fashion trends from runway image embeddings.
 - **Forecasting**: Predicts future trend popularity using historical patterns with a custom hybrid model.
-- **Designer Influence Graph**: Measures and visualizes how designers influence each other over time.
 - **Web Interface**: Flask-based dashboard for exploring clusters, trends, and forecasted styles.
 
 ## 📦 Tech Stack
